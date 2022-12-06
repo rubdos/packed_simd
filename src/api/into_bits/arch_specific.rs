@@ -37,8 +37,7 @@ macro_rules! impl_arch {
         // and the std library must be recompiled with them
         #[cfg(any(
             not(target_arch = "arm"),
-            all(target_feature = "v7", target_feature = "neon",
-                any(feature = "core_arch", libcore_neon)))
+            all(target_feature = "v7"))
         )]
         // note: if target is "powerpc", "altivec" must be enabled
         // and the std library must be recompiled with it
@@ -53,8 +52,7 @@ macro_rules! impl_arch {
 
         #[cfg(any(
             not(target_arch = "arm"),
-            all(target_feature = "v7", target_feature = "neon",
-                any(feature = "core_arch", libcore_neon)))
+            all(target_feature = "v7"))
         )]
         #[cfg(any(
             not(target_arch = "powerpc"),
